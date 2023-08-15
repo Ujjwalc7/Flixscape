@@ -18,7 +18,6 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-
     useEffect(()=>{
       window.scrollTo(0, 0);
     },[location]);
@@ -56,7 +55,7 @@ const Header = () => {
       }
     }
     const searchQueryHandle=(e)=>{
-      if (e.key==='Enter' && query.length>0) {
+      if (e.key==='Enter' || e.key==='Next' || e.key==='Go' && query.length>0) {
           navigate(`/search/${query}`)
           setTimeout(() => {
             setShowSearch(false);
