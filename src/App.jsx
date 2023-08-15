@@ -9,6 +9,7 @@ import Details from "./pages/details/Details"
 import SearchResult from "./pages/search result/SearchResult"
 import Explore from "./pages/explore/Explore"
 import Footer from "./components/footer/Footer"
+import PageNotFound from "./pages/404/PageNotFound"
 function App() {
   const dispatch=useDispatch();
   const {url}=useSelector((store)=>store.home)
@@ -60,7 +61,7 @@ function App() {
       <Route path="/:mediaType/:id" element={<Details/>}/>
       <Route path="/search/:query" element={<SearchResult/>}/>
       <Route path="/explore/:mediaType" element={<Explore/>}/>
-      <Route path="*" element={<SearchResult/>}/>
+      <Route path="*" element={<PageNotFound/>}/>
 
     </Routes>
     <Footer/>
