@@ -55,7 +55,7 @@ const Header = () => {
       }
     }
     const searchQueryHandle=(e)=>{
-      if (e.key==='Enter' || e.key==='Next' || e.key==='Go' && query.length>0) {
+      if (e.key==='Enter' && query.length>0) {
           navigate(`/search/${query}`)
           setTimeout(() => {
             setShowSearch(false);
@@ -97,6 +97,8 @@ const Header = () => {
           {showSearch && <div className="searchBar">
             <div className="searchInput">
           <input type="text" onChange={(e)=>setQuery(e.target.value)} onKeyUp={searchQueryHandle} name="searchInput" id="searchInput" placeholder="Search for a movie or a tv show..."/>
+          
+          <HiOutlineSearch className="searchMobileIcon" onClick={()=>navigate(`/search/${query}`)}/>
             <VscChromeClose onClick= {()=>setShowSearch(false)}/>
             </div>
 
