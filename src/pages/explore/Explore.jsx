@@ -72,6 +72,7 @@ const Explore = () => {
     }, [mediaType]);
 
     const onChange = (selectedItems, action) => {
+        console.log(selectedItems);
         if (action.name === "sortby") {
             setSortby(selectedItems);
             if (action.action !== "clear") {
@@ -82,6 +83,7 @@ const Explore = () => {
         }
 
         if (action.name === "genres") {
+            console.log(selectedItems);
             setGenre(selectedItems);
             if (action.action !== "clear") {
                 let genreId = selectedItems.map((g) => g.id);

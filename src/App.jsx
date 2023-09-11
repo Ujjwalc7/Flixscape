@@ -52,7 +52,7 @@ function App() {
     // console.log(allGenres);
 
   }
-
+ 
   return (
     <BrowserRouter>
     <Header/>
